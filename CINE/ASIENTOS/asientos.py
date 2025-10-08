@@ -34,3 +34,4 @@ def seleccionar_asiento(fila, columna):
     asientos[fila-1][columna-1] = False
     print(f"Asiento {fila}-{columna} reservado con éxito.")
     return True
+
