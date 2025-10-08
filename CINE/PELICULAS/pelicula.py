@@ -1,8 +1,11 @@
 class Pelicula:
-    def __init__(self, titulo,director,año,horario):
+    def __init__(self, titulo,director,año,horarios):
         self.titulo = titulo
-        self.horario = horario
         self.director = director
         self.año = año
+        self.horario = horarios
+        # self.tipo = tipo
     
+    def show_movie_info(self):
+        print(f"{self.titulo} \nDirector: {self.director} \nAño: {self.año} ")
     
