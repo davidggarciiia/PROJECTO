@@ -3,7 +3,7 @@ class Pelicula:
         self.titulo = titulo
         self.director = director
         self.año = año
-        self.horario = horarios
+        self.horarios = horarios
         # self.tipo = tipo
     
     def show_movie_info(self):
