@@ -1,6 +1,4 @@
-import qrcode
 from datetime import datetime
-from Cine import CINE
 import uuid
 
 class Ticket:
@@ -21,20 +19,3 @@ class Ticket:
         print(f"Precio Total: ${self.precio_total:.2f}")
         print(f"ID del Ticket: {self.id}")
         print("¡Gracias por su compra!")
-
-        # Generar el código QR con la información del ticket
-        info_qr = {
-            "id": self.id,
-            "pelicula": self.pelicula,
-            "asientos": self.asientos,
-            "precio_total": self.precio_total,
-            "fecha": datetime.now().strftime('%d/%m/%Y %H:%M:%S')
-        }
-        qr = qrcode.QRCode(version=1, box_size=10, border=5)
-        qr.add_data(info_qr)
-        qr.make(fit=True)
-
-        # Guardar el QR como imagen
-        qr_img = qr.make_image(fill="black", back_color="white")
-        qr_img.save("ticket_qr.png")
-        print("\nCódigo QR generado: ticket_qr.png")

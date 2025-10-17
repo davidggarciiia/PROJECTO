@@ -1,10 +1,8 @@
-from pelicula import Pelicula
-
+from .pelicula import Pelicula  # Importación relativa para evitar errores
 
 def mostrar_todas(peliculas):
     print("-----------CARTELERA-------------")
     for pelicula in peliculas:
-
         pelicula.show_movie_info()
         print("-------------------------------")
 
@@ -21,13 +19,11 @@ def select_movie(peliculas):
             if 1 <= opcion <= len(peliculas):
                 seleccionada = peliculas[opcion - 1]
                 print(f"\nHas seleccionado: {seleccionada.titulo}\n")
-                # seleccionada.show_movie_info()  # Mostrar la información
                 return seleccionada
             else:
                 print(f"Por favor, elige un número entre 1 y {len(peliculas)}.")
         except ValueError:
             print("Ha habido un error al leer la película. Escribe un número válido.")
-
 
 def select_schedule(pelicula):
     # Mostrar horarios disponibles
@@ -47,14 +43,3 @@ def select_schedule(pelicula):
                 print(f"Por favor, elige un número entre 1 y {len(pelicula.horarios)}.")
         except ValueError:
             print("Entrada no válida. Escribe un número.")
-
-
-
-peliculas = [
-        Pelicula("Inception", "Christopher Nolan", 2010, ["18:00", "20:30", "22:45"]),
-        Pelicula("Interstellar", "Christopher Nolan", 2014, ["17:00", "21:00"]),
-        Pelicula("Parasite", "Bong Joon-ho", 2019, ["16:30", "19:30", "22:00"])
-    ]
-mostrar_todas(peliculas)
-pelicula = select_movie(peliculas)
-select_schedule(pelicula)

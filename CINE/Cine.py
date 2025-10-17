@@ -1,10 +1,36 @@
+from PELICULAS import peliculas_utils
+from PELICULAS import pelicula
 from ASIENTOS import asientos
-from TICKET.ticket import Ticket  # Importar la clase Ticket
+from DESCUENTOS import descuento
 
 print("---BIENVENIDO AL CINEBICHO---")
 
-asientos.mostrar_asientos()
+# Declarar las películas disponibles
+peliculas_disponibles = [
+    pelicula.Pelicula("Avengers: Endgame","Alvaro",2014, ["15:00", "18:00", "21:00"]),
+    pelicula.Pelicula("The Dark Knight","Alvaro",2014, ["16:00", "19:00", "22:00"]),
+    pelicula.Pelicula("Inception","Alvaro",2014, ["14:30", "17:30", "20:30"])
+]
 
+# Mostrar todas las películas disponibles
+peliculas_utils.mostrar_todas(peliculas_disponibles)
+
+# Pide al usuario que seleccione una película y un horario
+pelicula_seleccionada = peliculas_utils.select_movie(peliculas_disponibles)
+horario = peliculas_utils.select_schedule(pelicula_seleccionada)
+
+# Pregunta por descuentos
+print(f"\nEl precio por entrada sin descuento es de 10.00 euros\n")
+descuento_opcion=input(f"\nTienes algun descuento especial? (s/n)")
+
+# Aplicar descuento si es necesario
+if descuento_opcion.lower() == 's':
+    descuento.mostrar_opciones()
+    descuento=int(input("Seleccione el tipo de descuento (1-3): "))
+    precio_total = descuento.aplicar_descuento(descuento, precio_entrada=10.0)
+
+
+asientos.mostrar_asientos()
 asientos_seleccionados = []
 
 while True:
@@ -25,8 +51,5 @@ while True:
     print("\n")
     asientos.mostrar_asientos()
 
-# Crear y generar el ticket
-ticket = Ticket(pelicula, asientos_seleccionados, precio_total)
-ticket.generar_ticket()
 
 print("\n¡Gracias por su compra!")
