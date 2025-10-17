@@ -3,7 +3,7 @@ FILAS = 5
 COLUMNAS = 6
 
 """Inicializa la matriz de asientos (True = disponible, False = ocupado)"""
-asientos = [] #Estas son las columnas
+asientos = [] 
 for _ in range(FILAS):
     fila = []
     for _ in range(COLUMNAS):
@@ -53,6 +53,6 @@ def proponer_mejor_asiento():
                 distancia = abs(i - centro_fila) + abs(j - centro_columna)                
                 if distancia < menor_distancia:
                     menor_distancia = distancia
-                    mejor_asiento = (i + 1, j + 1)  # +1 porque el usuario ve fila/columna desde 1
+                    mejor_asiento = (i + 1, j + 1)
     
     return mejor_asiento
