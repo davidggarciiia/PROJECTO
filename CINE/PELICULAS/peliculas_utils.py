@@ -43,3 +43,10 @@ def select_schedule(pelicula):
                 print(f"Por favor, elige un número entre 1 y {len(pelicula.horarios)}.")
         except ValueError:
             print("Entrada no válida. Escribe un número.")
+
+def seleccionar_pelicula_y_horario(peliculas_disponibles):
+    """Muestra las películas disponibles y permite al usuario seleccionar una película y un horario."""
+    mostrar_todas(peliculas_disponibles)
+    pelicula_seleccionada = select_movie(peliculas_disponibles)
+    horario = select_schedule(pelicula_seleccionada)
+    return pelicula_seleccionada, horario

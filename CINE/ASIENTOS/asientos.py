@@ -56,3 +56,24 @@ def proponer_mejor_asiento():
                     mejor_asiento = (i + 1, j + 1)
     
     return mejor_asiento
+
+"""Permite al usuario seleccionar asientos."""
+def seleccionar_asientos():
+    mostrar_asientos()
+    asientos_seleccionados = []
+
+    while True:
+        asiento_propuesto = proponer_mejor_asiento()
+        print(f"Se le propone el asiento más centrado disponible: Fila {asiento_propuesto[0]}, Columna {asiento_propuesto[1]}")
+
+        fila = int(input("Ingrese el número de fila: "))
+        columna = int(input("Ingrese el número de columna: "))
+
+        if seleccionar_asiento(fila, columna):
+            asientos_seleccionados.append((fila, columna))
+
+        respuesta = input("\n¿Desea comprar otro asiento para esta película? (s/n): ").lower()
+        if respuesta != 's':
+            break
+
+    return asientos_seleccionados

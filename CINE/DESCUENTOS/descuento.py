@@ -27,3 +27,16 @@ class Descuento:
         
         print(f"Descuento aplicado: {descuento*100:.0f}%. Precio con descuento: ${precio_con_descuento:.2f}")
         return precio_con_descuento
+
+def gestionar_descuento(precio_base):
+    """Gestiona la aplicación de descuentos al precio base."""
+    mi_descuento = Descuento()
+    print(f"\nEl precio por entrada sin descuento es de {precio_base:.2f} euros\n")
+    descuento_opcion = input(f"\n¿Tienes algún descuento especial? (s/n): ")
+
+    if descuento_opcion.lower() == 's':
+        mi_descuento.mostrar_opciones()
+        tipo_descuento = int(input("Seleccione el tipo de descuento (1-3): "))
+        return mi_descuento.aplicar_descuento(tipo_descuento, precio_base)
+
+    return precio_base
