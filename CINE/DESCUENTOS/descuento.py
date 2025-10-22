@@ -1,7 +1,6 @@
 class Descuento:
 
     def __init__(self):
-        # Inicialización de la clase Descuento
         self.descuentos = {
             1: {"tipo": "Estudiante", "porcentaje": 0.20},
             2: {"tipo": "Infantil", "porcentaje": 0.50},
@@ -9,25 +8,22 @@ class Descuento:
         }
     
     def mostrar_opciones(self):
-        opciones = [
-            "[1] Estudiante -- 20% de descuento",
-            "[2] Infantil -- 50% de descuento",
-            "[3] Jubilado -- 30% de descuento"
-        ]
-        for opcion in opciones:
-            print(opcion)
+        for clave, info in self.descuentos.items():
+            porcentaje = int(info["porcentaje"] * 100)
+            print(f"[{clave}] {info['tipo']} -- {porcentaje}% de descuento")
 
     def aplicar_descuento(self, tipo_descuento, precio):
-        if tipo_descuento == 1:  # Estudiante
-            descuento = 0.20
-        elif tipo_descuento == 2:  # Infantil
-            descuento = 0.50
-        elif tipo_descuento == 3:  # Jubilado
-            descuento = 0.30
-        else:
+        if tipo_descuento not in self.descuentos:
             print("Tipo de descuento no válido.")
             return precio
+        
+        if precio < 0:
+            print("El precio no puede ser negativo.")
+            return precio
 
+        descuento_info = self.descuentos[tipo_descuento]
+        descuento = descuento_info["porcentaje"]
         precio_con_descuento = precio * (1 - descuento)
-        print(f"Descuento aplicado: {descuento*100}%. Precio con descuento: ${precio_con_descuento:.2f}")
+        
+        print(f"Descuento aplicado: {descuento*100:.0f}%. Precio con descuento: ${precio_con_descuento:.2f}")
         return precio_con_descuento
