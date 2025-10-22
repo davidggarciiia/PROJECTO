@@ -8,7 +8,7 @@ class Ticket:
         self.pelicula = pelicula
         self.asientos = asientos
         self.precio_total = precio_total
-        self.id = str(uuid.uuid4())  # Genera un ID único para el ticket
+        self.id = str(uuid.uuid4())  
         self.fecha = datetime.now().strftime('%d/%m/%Y %H:%M:%S')
 
     def generar_ticket(self):
@@ -17,7 +17,7 @@ class Ticket:
         print("\n" + "=" * 52)
         print("\t       🎟️  TICKET DE COMPRA 🎟️")
         print("=" * 52)
-        print(f"Pelicula: {self.pelicula}")
+        print(f"Película: {self.pelicula}")
         print(f"Fecha: {self.fecha}")
         print("\nAsientos seleccionados:")
         for asiento in self.asientos:
@@ -30,7 +30,6 @@ class Ticket:
         print("\t       ¡Gracias por su compra!")
         print("=" * 52)
 
-        # --- Guardar en CSV ---
         self.guardar_en_csv()
 
     def guardar_en_csv(self):
@@ -58,6 +57,6 @@ class Ticket:
 
 def generar_ticket(pelicula, asientos, precio):
     """Genera y muestra el ticket de la compra, y lo guarda en CSV."""
-    precio_total = precio * len(asientos)  # Calcular el precio total basado en el número de asientos
+    precio_total = precio * len(asientos) 
     mi_ticket = Ticket(pelicula.titulo, asientos, precio_total)
     mi_ticket.generar_ticket()

@@ -14,7 +14,7 @@ for _ in range(FILAS):
 """Muestra el mapa de asientos"""
 def mostrar_asientos():
     print("💺 Mapa de asientos (X = ocupado, _ = disponible):\n")
-    print("----La pantalla esta aqui----\n")
+    print("----La pantalla está aquí----\n")
     for i, fila in enumerate(asientos):
         fila_str = f"Fila {i+1}: "
         for asiento in fila:
@@ -59,10 +59,10 @@ def proponer_mejor_asiento():
 
 """Permite al usuario seleccionar asientos."""
 def seleccionar_asientos():
-    mostrar_asientos()
     asientos_seleccionados = []
 
     while True:
+        mostrar_asientos()
         asiento_propuesto = proponer_mejor_asiento()
         print(f"Se le propone el asiento más centrado disponible: Fila {asiento_propuesto[0]}, Columna {asiento_propuesto[1]}")
 
