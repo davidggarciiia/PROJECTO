@@ -35,6 +35,8 @@ def seleccionar_asiento(fila, columna):
         return False
     asientos[fila-1][columna-1] = False
     print(f"Asiento {fila}-{columna} reservado con éxito.")
+    print("-"*68)
+
     return True
 
 """Propone el asiento más centrado disponible"""
@@ -64,6 +66,7 @@ def seleccionar_asientos():
     while True:
         mostrar_asientos()
         asiento_propuesto = proponer_mejor_asiento()
+        print("-"*68)
         print(f"Se le propone el asiento más centrado disponible: Fila {asiento_propuesto[0]}, Columna {asiento_propuesto[1]}")
 
         fila = int(input("Ingrese el número de fila: "))
