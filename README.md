@@ -46,7 +46,8 @@ Handles the available movie catalog and its utilities.
 ### TICKET
 Generates and stores purchase tickets.
 
-**DEPLOYMENT GUIDE**
+## DEPLOYMENT GUIDE
+
 - Clone the project in your device using the following command:
   
   ```python
