@@ -2,9 +2,9 @@
 
 ![488869232_17962851365866278_7552931985760598634_n](https://github.com/user-attachments/assets/7f4a8038-8789-4159-9fbc-08586f03a8ef)
 
-** Deployment guide **
+**Deployment guide**
 - Clone the project in your device using the following command:
-  '' git clone https://github.com/davidggarciiia/PROJECTO.git''
+  `git clone https://github.com/davidggarciiia/PROJECTO.git`
 
 - Execute main.py, located in PROJECTO/CINE/main.py
-  '' python .\PROJECTO\CINE\main.py''
+`python .\PROJECTO\CINE\main.py`
