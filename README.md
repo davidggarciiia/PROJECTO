@@ -46,15 +46,20 @@ Handles the available movie catalog and its utilities.
 ### TICKET
 Generates and stores purchase tickets.
 
+## REQUIREMENTS
+```bash
+Python 3.x
+```
+
 ## DEPLOYMENT GUIDE
 
 - Clone the project in your device using the following command:
   
   ```python
-  git clone https://github.com/davidggarciiia/PROJECTO.git`
+  git clone https://github.com/davidggarciiia/PROJECTO.git
 
 - Execute main.py, located in PROJECTO/CINE/main.py
 
   ```python
-  python .\PROJECTO\CINE\main.py`
+  python .\PROJECTO\CINE\main.py
 
