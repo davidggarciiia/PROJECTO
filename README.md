@@ -1,7 +1,5 @@
 # CINE BICHO
 
-![488869232_17962851365866278_7552931985760598634_n](https://github.com/user-attachments/assets/7f4a8038-8789-4159-9fbc-08586f03a8ef)
-
 ## INTRODUCTION
 
 This project consists of creating a system to manage movie ticket purchases. It allows users to choose a movie, select the time, choose seats, and apply discounts before generating the final ticket.
